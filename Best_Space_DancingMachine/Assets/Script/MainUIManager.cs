@@ -9,6 +9,12 @@ public class MainUIManager : MonoBehaviour {
     public Text day;
     public Text placeName;
 
+    public Text btntext_Dance;
+    public Text btntext_Sound;
+    public Text btntext_Coordi;
+    public Text btntext_Place;
+
+
     public Button dance;
     public Button sound;
     public Button coordi;
@@ -34,25 +40,35 @@ public class MainUIManager : MonoBehaviour {
         placeName.text = PlayerData.getInstance().place;
     }
 
+    public void onClick_Option()
+    {
+
+    }
+
     public void onClick_Dance()
     {
         panelActive(dancePanel, soundPanel, coordiPanel, placePanel);
-
+        colorChange(btntext_Dance, btntext_Sound, btntext_Place, btntext_Coordi);
+        
     }
 
     public void onClick_Sound()
     {
         panelActive(soundPanel, dancePanel, coordiPanel, placePanel);
+        colorChange(btntext_Sound, btntext_Dance, btntext_Place, btntext_Coordi);
+
     }
 
     public void onClick_Coordi()
     {
         panelActive(coordiPanel, dancePanel, soundPanel, placePanel);
+        colorChange(btntext_Coordi, btntext_Sound, btntext_Dance, btntext_Place);
     }
 
     public void onClick_Place()
     {
         panelActive(placePanel, dancePanel, soundPanel, coordiPanel);
+        colorChange(btntext_Place, btntext_Coordi, btntext_Sound, btntext_Dance);
     }
 
     /// <summary>
@@ -68,5 +84,21 @@ public class MainUIManager : MonoBehaviour {
         panel1.SetActive(false);
         panel2.SetActive(false);
         panel3.SetActive(false);
+    }
+
+    /// <summary>
+    /// Text 색상변경
+    /// </summary>
+    /// <param name="active"></param>
+    /// <param name="text1"></param>
+    /// <param name="text2"></param>
+    /// <param name="text3"></param>
+    public void colorChange(Text active, Text text1, Text text2, Text text3)
+    {
+        active.color = Color.white;
+        text1.color = Color.black;
+        text2.color = Color.black;
+        text3.color = Color.black;
+
     }
 }
