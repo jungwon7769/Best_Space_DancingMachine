@@ -8,11 +8,15 @@ using UnityEngine.UI;
 public class Dance : MonoBehaviour {
     private static Dance instance = null;
 
-    public DanceType danceType;
+    public GameObject addItem;
+    public GameObject test;
+
     public Text Name;
     public Text Price;
     public Text Earn;
 
+    public bool isExist = false;
+    public List<DanceType> danceList = new List<DanceType>();
 
     public class DanceType
     {
@@ -25,8 +29,13 @@ public class Dance : MonoBehaviour {
 
     private Dance()
     {
-        danceType = new DanceType();
- 
+       
+    }
+
+    public void Start()
+    {
+        if(!isExist)
+        danceList1();
     }
 
     public static Dance getInstance()
@@ -39,22 +48,40 @@ public class Dance : MonoBehaviour {
         return instance;
     }
 
-    public void danceList()
+    public void danceList1()
     {
-        makeDance("손뼉치기", 1, 100, 1.1f, 0.5f);
+        isExist = true;
+         testtest();
+
+        for (int i = 0; i < danceList.Count; i++)
+        {
+            Name.text = danceList[i].danceName;
+            Price.text = danceList[i].dancePrice.ToString();
+            //Instantiate(addItem).transform.SetParent(test.transform);
+        }
+
     }
 
-    public void makeDance(string name, int num, int price, float up, float time)
+    public void testtest()
     {
-        DanceType makedance = new DanceType();
+        addDanceList("손뼉치기", 1, 100, 1.1f, 0.5f);
+    }
 
-        makedance.danceName = name;
-        makedance.danceNum = num;
-        makedance.dancePrice = price;
-        makedance.danceUp = up;
-        makedance.danceTime = time;
+    public void addDanceList(string name, int num, int price, float up, float time) // 댄스 리스트에 추가하기
+    {
+        DanceType dance_ = new DanceType();
+
+        dance_.danceName = name;
+        dance_.danceNum = num;
+        dance_.dancePrice = price;
+        dance_.danceTime = time;
+        dance_.danceUp = up;
+
+        danceList.Add(dance_);
 
     }
+
+
   
 
 }
