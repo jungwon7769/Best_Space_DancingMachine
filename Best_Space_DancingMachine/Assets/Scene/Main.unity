@@ -1396,7 +1396,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7014,7 +7014,7 @@ GameObject:
   - component: {fileID: 1831118631}
   - component: {fileID: 1831118630}
   m_Layer: 5
-  m_Name: Panel_Item_1
+  m_Name: Item_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,6 +12,7 @@ public class PlayerData{
 
     private PlayerData()
     {
+        mapnum = 0;
         money = 0.0f;
         day = 1;
         place = "동네놀이터"; 

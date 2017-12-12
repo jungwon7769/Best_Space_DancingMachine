@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum Stage
+{
+
+}
+
 public class Place {
     private static Place instance = null;
 
