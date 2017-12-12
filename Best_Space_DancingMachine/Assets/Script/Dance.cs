@@ -50,6 +50,7 @@ public class Dance : MonoBehaviour {
 
     public void danceList1()
     {
+        GameObject temp;
         isExist = true;
          testtest();
 
@@ -57,7 +58,11 @@ public class Dance : MonoBehaviour {
         {
             Name.text = danceList[i].danceName;
             Price.text = danceList[i].dancePrice.ToString();
-            //Instantiate(addItem).transform.SetParent(test.transform);
+            temp = Instantiate(addItem);
+            temp.transform.parent = test.transform;
+            temp.name = "추가";
+                //Instantiate(addItem).transform.SetParent(test.transform);
+
         }
 
     }
@@ -65,6 +70,7 @@ public class Dance : MonoBehaviour {
     public void testtest()
     {
         addDanceList("손뼉치기", 1, 100, 1.1f, 0.5f);
+        addDanceList("낄낄", 1, 100, 1.1f, 0.5f);
     }
 
     public void addDanceList(string name, int num, int price, float up, float time) // 댄스 리스트에 추가하기
