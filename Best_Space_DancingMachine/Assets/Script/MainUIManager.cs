@@ -13,8 +13,7 @@ public class MainUIManager : MonoBehaviour {
     public Text btntext_Sound;
     public Text btntext_Coordi;
     public Text btntext_Place;
-
-
+    
     public Button dance;
     public Button sound;
     public Button coordi;
@@ -25,31 +24,59 @@ public class MainUIManager : MonoBehaviour {
     public GameObject coordiPanel;
     public GameObject placePanel;
 
+    public Text clickmoney;
+    public Text automoney;
+
 	// Use this for initialization
 	void Start () {
         dancePanel.SetActive(true); // dance default
         soundPanel.SetActive(false);
         coordiPanel.SetActive(false);
         placePanel.SetActive(false);
+        clickmoney.enabled = false;
 	}
 
     void Update()
     {
-        money.text = PlayerData.getInstance().money.ToString();
+        updatePlayerData();
+        
+    }
+
+    public void updatePlayerData()
+    {
+        PlayerData.getInstance().money_add_map1();
+
+        money.text = ((int)PlayerData.getInstance().money).ToString();
         day.text = "DAY. " + PlayerData.getInstance().day;
         placeName.text = PlayerData.getInstance().place;
     }
+
 
     public void onClick_Option()
     {
 
     }
 
+    public void onClick_money()
+    {
+        PlayerData.getInstance().money += 10;
+     
+        StartCoroutine("btnClicker");
+          
+    }
+
+    IEnumerator btnClicker()
+    {
+        clickmoney.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        clickmoney.enabled = false;
+    }
+
     public void onClick_Dance()
     {
         panelActive(dancePanel, soundPanel, coordiPanel, placePanel);
         colorChange(btntext_Dance, btntext_Sound, btntext_Place, btntext_Coordi);
-        
+        allTextBlack();
     }
 
     public void onClick_Sound()
@@ -100,5 +127,13 @@ public class MainUIManager : MonoBehaviour {
         text2.color = Color.black;
         text3.color = Color.black;
 
+    }
+
+    public void allTextBlack()
+    {
+        btntext_Coordi.color = Color.black;
+        btntext_Dance.color = Color.black;
+        btntext_Place.color = Color.black;
+        btntext_Sound.color = Color.black;
     }
 }
