@@ -8,6 +8,7 @@ public class PlayerData{
     public float money;
     public int day;
     public string place;
+    public int mapnum;
 
     private PlayerData()
     {
@@ -25,4 +26,12 @@ public class PlayerData{
         }
         return instance;
     }
+
+    public void money_add_map1()
+    {
+        money += Time.deltaTime * 1;
+        
+    }
+
+
 }
