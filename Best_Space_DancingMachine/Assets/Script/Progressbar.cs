@@ -7,6 +7,7 @@ public class Progressbar : MonoBehaviour {
 
     public Slider progressbar;
     public float maxvalue = 100.0f;
+    Dance dance = Dance.getInstance();
 
     // Use this for initialization
     void Start () {
@@ -15,6 +16,11 @@ public class Progressbar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        normal();
+    }
+
+    public void normal() // 기본 작동하는 프로그래스바 (1초)
+    {
         progressbar.maxValue = maxvalue;
         progressbar.value += Time.deltaTime * 100;
         if (progressbar.value == 100f)
@@ -23,4 +29,11 @@ public class Progressbar : MonoBehaviour {
             PlayerData.getInstance().money += 1;
         }
     }
+
+    public void danceList()
+    {
+       
+    }
+
+
 }
