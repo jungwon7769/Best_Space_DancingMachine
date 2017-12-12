@@ -12,6 +12,7 @@ public class PlayerData{
 
     private PlayerData()
     {
+        mapnum = 0;
         money = 0.0f;
         day = 1;
         place = "동네놀이터"; 
@@ -27,11 +28,7 @@ public class PlayerData{
         return instance;
     }
 
-    public void money_add_map1()
-    {
-        money += Time.deltaTime * 1;
-        
-    }
+
 
 
 }

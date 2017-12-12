@@ -9,6 +9,9 @@ public class MainUIManager : MonoBehaviour {
     public Text day;
     public Text placeName;
 
+    public Text clickmoney;
+    public Text automoney;
+
     public Text btntext_Dance;
     public Text btntext_Sound;
     public Text btntext_Coordi;
@@ -24,8 +27,8 @@ public class MainUIManager : MonoBehaviour {
     public GameObject coordiPanel;
     public GameObject placePanel;
 
-    public Text clickmoney;
-    public Text automoney;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -44,11 +47,12 @@ public class MainUIManager : MonoBehaviour {
 
     public void updatePlayerData()
     {
-        PlayerData.getInstance().money_add_map1();
 
         money.text = ((int)PlayerData.getInstance().money).ToString();
         day.text = "DAY. " + PlayerData.getInstance().day;
         placeName.text = PlayerData.getInstance().place;
+
+ 
     }
 
 
