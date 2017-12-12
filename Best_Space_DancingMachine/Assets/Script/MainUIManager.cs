@@ -60,7 +60,7 @@ public class MainUIManager : MonoBehaviour {
     public void onClick_money()
     {
         PlayerData.getInstance().money += 10;
-     
+        allBtn_TextBlack();
         StartCoroutine("btnClicker");
           
     }
@@ -76,7 +76,6 @@ public class MainUIManager : MonoBehaviour {
     {
         panelActive(dancePanel, soundPanel, coordiPanel, placePanel);
         colorChange(btntext_Dance, btntext_Sound, btntext_Place, btntext_Coordi);
-        allTextBlack();
     }
 
     public void onClick_Sound()
@@ -129,7 +128,7 @@ public class MainUIManager : MonoBehaviour {
 
     }
 
-    public void allTextBlack()
+    public void allBtn_TextBlack()
     {
         btntext_Coordi.color = Color.black;
         btntext_Dance.color = Color.black;
