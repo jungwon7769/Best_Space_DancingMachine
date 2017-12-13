@@ -212,14 +212,15 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Coordi.cs" />
     <Compile Include="Assets\Script\Dance.cs" />
+    <Compile Include="Assets\Script\DanceItem.cs" />
     <Compile Include="Assets\Script\Fever.cs" />
-    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\MainUIManager.cs" />
     <Compile Include="Assets\Script\OptionUIManager.cs" />
     <Compile Include="Assets\Script\Place.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerData.cs" />
     <Compile Include="Assets\Script\Sound.cs" />
+    <Compile Include="Assets\Script\SoundItem.cs" />
     <Compile Include="Assets\Script\SoundManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
