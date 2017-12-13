@@ -10,6 +10,9 @@ public class PlayerData{
     public string place;
     public int mapnum;
 
+    public int danceLv = 1;
+
+
     private PlayerData()
     {
         mapnum = 0;
