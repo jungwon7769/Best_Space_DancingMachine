@@ -4,30 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerData{
+
     private static PlayerData instance = null;
 
+    // 플레이어 기본 정보
     public float money;
+    public int rock_money;
     public int day;
     public string place;
-    public int mapnum;
-    
- 
 
-    public bool fever = false;
+    public int placeNum;
+    public int soundNum;
 
-    public int danceLv = 1;
+    public bool fever;
 
 
     private PlayerData()
     {
-        mapnum = 0;
+        placeNum = 0;
+        soundNum = 0;
         money = 0.0f;
+        rock_money = 0;
         day = 1;
-        place = "동네놀이터"; 
+        place = "동네놀이터";
+        fever = false;
         //초기화
     }
-
-  
 
     public static PlayerData getInstance()
     {
