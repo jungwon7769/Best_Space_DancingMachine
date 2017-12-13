@@ -54,6 +54,7 @@ public class Item : MonoBehaviour {
             price *= LvUP;
             
         }
+
     }
 
 

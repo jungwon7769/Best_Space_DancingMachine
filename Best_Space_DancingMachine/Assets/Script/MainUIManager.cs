@@ -28,9 +28,6 @@ public class MainUIManager : MonoBehaviour {
     public GameObject placePanel;
 
 
-    public Slider feverbar;
-    public Button btn_fever;
-
 
 
     // Use this for initialization
@@ -54,8 +51,7 @@ public class MainUIManager : MonoBehaviour {
         money.text = ((int)PlayerData.getInstance().money).ToString();
         day.text = "DAY. " + PlayerData.getInstance().day;
         placeName.text = PlayerData.getInstance().place;
-        if (PlayerData.getInstance().fever)
-            feverMode();
+   
       
     }
 
@@ -63,31 +59,6 @@ public class MainUIManager : MonoBehaviour {
     public void onClick_Option()
     {
 
-    }
-
-    public void onClick_money()
-    {
-        float maxFever = 100.0f;
-        feverbar.maxValue = maxFever;
-
-        feverbar.value += 50;
-        if (feverbar.value == maxFever)
-        {
-            PlayerData.getInstance().fever = true;
-            btn_fever.interactable = false;
-        }
-    }
-
-    public void feverMode() // 피버모드 발동
-    {
-        feverbar.value -= Time.deltaTime * 100 * 1.0f;
-        Debug.Log(feverbar.value);
-
-        if (feverbar.value == 0.0f)
-        {
-            PlayerData.getInstance().fever = false;
-            btn_fever.interactable = true;
-        }
     }
 
     IEnumerator btnClicker()

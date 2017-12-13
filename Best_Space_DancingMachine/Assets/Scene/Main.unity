@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 241432129}
   - component: {fileID: 241432128}
   - component: {fileID: 241432132}
+  - component: {fileID: 241432133}
   m_Layer: 5
   m_Name: Canvas_Main
   m_TagString: Untagged
@@ -657,6 +658,20 @@ MonoBehaviour:
   soundPanel: {fileID: 566275772}
   coordiPanel: {fileID: 1386212377}
   placePanel: {fileID: 666769336}
+--- !u!114 &241432133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241432127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3f7107ed40f54e846b8d921c0615e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feverbar: {fileID: 184378575}
+  btn_fever: {fileID: 1322835230}
+  maxFever: 100
 --- !u!1 &272758873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4182,7 +4197,7 @@ Prefab:
     - target: {fileID: 224308528912995468, guid: 2ceda286e3b731346bc3dd951437eaa9,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -18.649998
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ceda286e3b731346bc3dd951437eaa9, type: 2}
@@ -4715,7 +4730,6 @@ GameObject:
   - component: {fileID: 1322835232}
   - component: {fileID: 1322835231}
   - component: {fileID: 1322835230}
-  - component: {fileID: 1322835233}
   m_Layer: 5
   m_Name: Btn_Fever
   m_TagString: Untagged
@@ -4782,7 +4796,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1322835233}
+      - m_Target: {fileID: 241432133}
         m_MethodName: onclick_fever
         m_Mode: 1
         m_Arguments:
@@ -4828,19 +4842,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322835228}
---- !u!114 &1322835233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1322835228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b3f7107ed40f54e846b8d921c0615e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feverbar: {fileID: 184378575}
-  maxFever: 100
 --- !u!1 &1328817020
 GameObject:
   m_ObjectHideFlags: 0
