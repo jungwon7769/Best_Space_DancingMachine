@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerData{
     private static PlayerData instance = null;
@@ -9,6 +10,13 @@ public class PlayerData{
     public int day;
     public string place;
     public int mapnum;
+    
+ 
+
+    public bool fever = false;
+
+    public int danceLv = 1;
+
 
     private PlayerData()
     {
@@ -19,6 +27,8 @@ public class PlayerData{
         //초기화
     }
 
+  
+
     public static PlayerData getInstance()
     {
         if (instance == null)
@@ -28,6 +38,7 @@ public class PlayerData{
         return instance;
     }
 
+ 
 
 
 
