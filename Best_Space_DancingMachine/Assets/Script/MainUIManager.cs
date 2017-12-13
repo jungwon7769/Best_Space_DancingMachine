@@ -26,6 +26,10 @@ public class MainUIManager : MonoBehaviour {
     public GameObject coordiPanel;
     public GameObject placePanel;
 
+    public GameObject player_Prefab;
+    public GameObject parent_obj;
+
+
 
 
 
@@ -36,6 +40,8 @@ public class MainUIManager : MonoBehaviour {
         coordiPanel.SetActive(false);
         placePanel.SetActive(false);
         clickmoney.enabled = false;
+
+        Instantiate(player_Prefab, parent_obj.transform);
 	}
 
     void Update()

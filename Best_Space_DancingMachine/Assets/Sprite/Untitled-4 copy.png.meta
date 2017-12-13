@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: 9408cf199aa02234989d00dbe74d53ba
+timeCreated: 1513176488
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Untitled-4 copy_0
+    21300002: Untitled-4 copy_1
+    21300004: Untitled-4 copy_2
+    21300006: Untitled-4 copy_3
+    21300008: Untitled-4 copy_4
+    21300010: Untitled-4 copy_5
+    21300012: Untitled-4 copy_6
+    21300014: Untitled-4 copy_7
+    21300016: Untitled-4 copy_8
+    21300018: Untitled-4 copy_9
+    21300020: Untitled-4 copy_10
+    21300022: Untitled-4 copy_11
+    21300024: Untitled-4 copy_12
+    21300026: Untitled-4 copy_13
+    21300028: Untitled-4 copy_14
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Untitled-4 copy_0
+      rect:
+        serializedVersion: 2
+        x: 188.81738
+        y: 511.63483
+        width: 138.18262
+        height: 121.36517
+      alignment: 9
+      pivot: {x: 0.49342397, y: 0.50562423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 456
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_2
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 380
+        width: 23
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 352
+        width: 22
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_4
+      rect:
+        serializedVersion: 2
+        x: 168.1826
+        y: 269
+        width: 160.99998
+        height: 182.00006
+      alignment: 9
+      pivot: {x: 0.5112882, y: 0.49999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 292
+        width: 21
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 265
+        width: 21
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 247.00002
+        width: 43
+        height: 41.999985
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4999998}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 219
+        width: 43
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_9
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 155
+        width: 50
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_10
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 131
+        width: 48.000008
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_11
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 64
+        width: 21
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 49.000004
+        width: 18
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 57
+        height: 37
+      alignment: 9
+      pivot: {x: 0.45614034, y: 0.43243244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Untitled-4 copy_14
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 19
+        width: 52
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5480769, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 99167533523923
+  assetBundleName: 
+  assetBundleVariant: 
