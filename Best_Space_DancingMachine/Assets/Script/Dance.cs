@@ -8,34 +8,43 @@ using UnityEngine.UI;
 public class Dance : MonoBehaviour {
     private static Dance instance = null;
 
-    public GameObject addItem;
-    public GameObject test;
+    public class DanceInfo
+    {
+        public string name; // 댄스 이름
+        public int num; // 댄스 번호
+        public float price; // 댄스 가격 
+        public float LvUP; // 댄스 레벨업 비율
+        public float earn; // 댄스로 벌수 있는 돈
+        public float playTime; // 댄스 재생 시간
+    }
 
-    public Text Name;
-    public Text Price;
-    public Text Earn;
+    public GameObject dance_Prefab;
+    public GameObject parent_obj;
 
     public bool isExist = false;
-    public List<DanceType> danceList = new List<DanceType>();
 
-    public class DanceType
-    {
-       public string danceName; // 댄스이름
-       public int danceNum; // 댄스번호
-       public int dancePrice;// 댄스 가격
-       public float danceUp; // 댄스 강화 비율
-       public float danceTime; // 댄스 한번 진행시간
-    }
+    public List<DanceInfo> danceList;
+
 
     private Dance()
     {
-       
+        danceList = new List<DanceInfo>();
+        addDanceList();
     }
 
     public void Start()
     {
-        if(!isExist)
-        danceList1();
+        GameObject temp;
+
+        for (int i = 0; i < danceList.Count; i++)
+        {
+           
+            temp = Instantiate(dance_Prefab);
+            temp.transform.parent = parent_obj.transform;
+            temp.name = "추가";
+            temp.GetComponent<Item>().Name.text = danceList[i].name;
+            temp.GetComponent<Item>().Price.text = danceList[i].price.ToString();
+        }
     }
 
     public static Dance getInstance()
@@ -48,46 +57,38 @@ public class Dance : MonoBehaviour {
         return instance;
     }
 
-    public void danceList1()
+    public void addDanceList()
     {
-        GameObject temp;
-        isExist = true;
-         testtest();
-
-        for (int i = 0; i < danceList.Count; i++)
-        {
-            Name.text = danceList[i].danceName;
-            Price.text = danceList[i].dancePrice.ToString();
-            temp = Instantiate(addItem);
-            temp.transform.parent = test.transform;
-            temp.name = "추가";
-                //Instantiate(addItem).transform.SetParent(test.transform);
-
-        }
-
+      
+       addDance("손뼉치기", 1, 100.0f, 1.1f, 100f, 0.5f);
+       addDance("낄낄", 1, 100.0f, 1.1f, 100f, 0.5f);
+        
     }
-
-    public void testtest()
+    
+    /// <summary>
+    /// 댄스 정보 입력해서 리스트안에 넣기
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="num"></param>
+    /// <param name="price"></param>
+    /// <param name="LvUp"></param>
+    /// <param name="earn"></param>
+    /// <param name="playTime"></param>
+    public void addDance(string name, int num, float price, float LvUp, float earn, float playTime)
     {
-        addDanceList("손뼉치기", 1, 100, 1.1f, 0.5f);
-        addDanceList("낄낄", 1, 100, 1.1f, 0.5f);
-    }
+        DanceInfo dance = new DanceInfo();
 
-    public void addDanceList(string name, int num, int price, float up, float time) // 댄스 리스트에 추가하기
-    {
-        DanceType dance_ = new DanceType();
+        dance.name = name;
+        dance.num = num;
+        dance.price = price;
+        dance.LvUP = LvUp;
+        dance.earn = earn;
+        dance.playTime = playTime;
 
-        dance_.danceName = name;
-        dance_.danceNum = num;
-        dance_.dancePrice = price;
-        dance_.danceTime = time;
-        dance_.danceUp = up;
-
-        danceList.Add(dance_);
-
+        danceList.Add(dance);
+        
     }
 
 
-  
 
 }
