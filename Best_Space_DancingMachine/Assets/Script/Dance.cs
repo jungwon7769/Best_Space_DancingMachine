@@ -46,15 +46,15 @@ public class Dance : MonoBehaviour {
             temp = Instantiate(dance_Prefab);
             temp.transform.parent = parent_obj.transform;
             temp.name = "추가";
-            temp.GetComponent<Item>().Name.text = danceList[i].name;
-            temp.GetComponent<Item>().Price.text = danceList[i].price.ToString();
-            temp.GetComponent<Item>().Level.text = "Lv. " + danceList[i].level;
-            temp.GetComponent<Item>().playTime = danceList[i].playTime;
-            temp.GetComponent<Item>().earn = danceList[i].earn;
-            temp.GetComponent<Item>().price = danceList[i].price;
-            temp.GetComponent<Item>().level = danceList[i].level;
-            temp.GetComponent<Item>().num = danceList[i].num;
-            temp.GetComponent<Item>().LvUP = danceList[i].LvUP;
+            temp.GetComponent<DanceItem>().Name.text = danceList[i].name;
+            temp.GetComponent<DanceItem>().Price.text = danceList[i].price.ToString();
+            temp.GetComponent<DanceItem>().Level.text = "Lv. " + danceList[i].level;
+            temp.GetComponent<DanceItem>().playTime = danceList[i].playTime;
+            temp.GetComponent<DanceItem>().earn = danceList[i].earn;
+            temp.GetComponent<DanceItem>().price = danceList[i].price;
+            temp.GetComponent<DanceItem>().level = danceList[i].level;
+            temp.GetComponent<DanceItem>().num = danceList[i].num;
+            temp.GetComponent<DanceItem>().LvUP = danceList[i].LvUP;
         }
     }
     

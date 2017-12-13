@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DanceItem : MonoBehaviour {
 
-    private static Item instance = null;
+    private static DanceItem instance = null;
 
     public Text Name;
     public Text Price;
@@ -21,15 +21,15 @@ public class DanceItem : MonoBehaviour {
     public Slider progressbar;
     public float maxvalue = 100.0f;
 
-    private Item()
+    private DanceItem()
     {
 
     }
 
-    public static Item getInstance()
+    public static DanceItem getInstance()
     {
         if (instance == null)
-            instance = new Item();
+            instance = new DanceItem();
 
         return instance;
     }
