@@ -458,7 +458,6 @@ GameObject:
   m_Component:
   - component: {fileID: 184378573}
   - component: {fileID: 184378575}
-  - component: {fileID: 184378574}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -486,20 +485,6 @@ RectTransform:
   m_AnchoredPosition: {x: -207.5, y: -156.9}
   m_SizeDelta: {x: 242, y: 74.6}
   m_Pivot: {x: 0.49999997, y: 0.50000095}
---- !u!114 &184378574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 184378572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26492ed12ee9c15448bbf96991dc51e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressbar: {fileID: 184378575}
-  maxvalue: 100
-  playTime: 0
 --- !u!114 &184378575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4197,7 +4182,7 @@ Prefab:
     - target: {fileID: 224308528912995468, guid: 2ceda286e3b731346bc3dd951437eaa9,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -18.649998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ceda286e3b731346bc3dd951437eaa9, type: 2}
@@ -4730,8 +4715,9 @@ GameObject:
   - component: {fileID: 1322835232}
   - component: {fileID: 1322835231}
   - component: {fileID: 1322835230}
+  - component: {fileID: 1322835233}
   m_Layer: 5
-  m_Name: Btn_earnMoney
+  m_Name: Btn_Fever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4796,8 +4782,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 241432132}
-        m_MethodName: onClick_money
+      - m_Target: {fileID: 1322835233}
+        m_MethodName: onclick_fever
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4842,6 +4828,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322835228}
+--- !u!114 &1322835233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322835228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3f7107ed40f54e846b8d921c0615e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feverbar: {fileID: 184378575}
+  maxFever: 100
 --- !u!1 &1328817020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,7 +5259,6 @@ MonoBehaviour:
   dance_Prefab: {fileID: 1260895032834566, guid: 2ceda286e3b731346bc3dd951437eaa9,
     type: 2}
   parent_obj: {fileID: 1429674645}
-  isExist: 0
 --- !u!1 &1482896438
 GameObject:
   m_ObjectHideFlags: 0

@@ -215,6 +215,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Coordi.cs" />
     <Compile Include="Assets\Script\Dance.cs" />
+    <Compile Include="Assets\Script\Fever.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\MainUIManager.cs" />
     <Compile Include="Assets\Script\OptionUIManager.cs" />

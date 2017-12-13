@@ -28,7 +28,7 @@ public class Item : MonoBehaviour {
 
     public static Item getInstance()
     {
-        if (instance = null)
+        if (instance == null)
             instance = new Item();
 
         return instance;
@@ -52,7 +52,6 @@ public class Item : MonoBehaviour {
             level++;
             earn *= LvUP;
             price *= LvUP;
-            Debug.Log("썻다" + price);
             
         }
     }
@@ -66,7 +65,6 @@ public class Item : MonoBehaviour {
         {
             progressbar.value = 0.0f;
             PlayerData.getInstance().money += earn;
-            Debug.Log("earn" + earn);
         }
     }
 
