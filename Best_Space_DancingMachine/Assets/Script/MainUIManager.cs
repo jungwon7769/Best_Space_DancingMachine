@@ -60,13 +60,7 @@ public class MainUIManager : MonoBehaviour {
 
     }
 
-    IEnumerator btnClicker()
-    {
-        clickmoney.enabled = true;
-        yield return new WaitForSeconds(0.1f);
-        clickmoney.enabled = false;
-    }
-
+  
     public void onClick_Dance()
     {
         panelActive(dancePanel, soundPanel, coordiPanel, placePanel);
