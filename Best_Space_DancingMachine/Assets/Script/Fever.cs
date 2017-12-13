@@ -7,9 +7,14 @@ public class Fever : MonoBehaviour {
 
     public Slider feverbar;
     public Button btn_fever;
+    public Text clickText;
     public float maxFever = 100.0f;
-    
 
+
+    public void Start()
+    {
+        clickText = GetComponent<MainUIManager>().clickmoney;
+    }
     public void Update()
     {
         if (PlayerData.getInstance().fever)
@@ -20,7 +25,9 @@ public class Fever : MonoBehaviour {
         float maxFever = 100.0f;
         feverbar.maxValue = maxFever;
 
-        feverbar.value += 50;
+        feverbar.value += 2;
+        StartCoroutine("btnClicker");
+
         if (feverbar.value == maxFever)
         {
             PlayerData.getInstance().fever = true;
@@ -29,9 +36,17 @@ public class Fever : MonoBehaviour {
 
     }
 
+    IEnumerator btnClicker()
+    {
+        clickText.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        clickText.enabled = false;
+    }
+
+
     public void feverMode() // 피버모드 발동
     {
-        feverbar.value -= Time.deltaTime * 100 * 1.0f;
+        feverbar.value -= Time.deltaTime * 100 * 10f;
         Debug.Log(feverbar.value);
 
         if (feverbar.value == 0.0f)

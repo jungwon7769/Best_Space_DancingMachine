@@ -10,7 +10,6 @@ public class MainUIManager : MonoBehaviour {
     public Text placeName;
 
     public Text clickmoney;
-    public Text automoney;
 
     public Text btntext_Dance;
     public Text btntext_Sound;
