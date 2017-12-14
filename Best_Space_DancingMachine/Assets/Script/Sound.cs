@@ -58,6 +58,7 @@ public class Sound : MonoBehaviour {
             temp = Instantiate(sound_Prefab);
             temp.transform.parent = parent_obj.transform;
             temp.name = "음악추가";
+            temp.transform.localScale = new Vector3(1, 1, 1);
             temp.GetComponent<SoundItem>().Name.text = soundList[i].name;
             temp.GetComponent<SoundItem>().effect = (SoundEffect)soundList[i].effect;
 
