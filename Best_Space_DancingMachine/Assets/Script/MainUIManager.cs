@@ -25,10 +25,7 @@ public class MainUIManager : MonoBehaviour {
     public GameObject soundPanel;
     public GameObject coordiPanel;
     public GameObject placePanel;
-
-    public GameObject player_Prefab;
-    public GameObject parent_obj;
-
+    
 
 
 
@@ -40,8 +37,7 @@ public class MainUIManager : MonoBehaviour {
         coordiPanel.SetActive(false);
         placePanel.SetActive(false);
         clickmoney.enabled = false;
-
-        Instantiate(player_Prefab, parent_obj.transform);
+        
 	}
 
     void Update()
@@ -57,6 +53,7 @@ public class MainUIManager : MonoBehaviour {
         day.text = "DAY. " + PlayerData.getInstance().day;
         placeName.text = PlayerData.getInstance().place;
    
+
       
     }
 
