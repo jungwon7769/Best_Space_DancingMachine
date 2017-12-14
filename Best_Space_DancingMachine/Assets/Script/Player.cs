@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
     
-   
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Animator animator;
+
+    public void Start()
+    {
+        animator = this.GetComponent<Animator>();
+    }
+    public void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetInteger("dancePlay", 1);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            animator.SetInteger("dancePlay", 0);
+        }
+
+    }
 }
