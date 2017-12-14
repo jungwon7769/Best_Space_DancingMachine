@@ -77,9 +77,10 @@ public class Dance : MonoBehaviour {
     {
       
        addDance("왼쪽으로 비트맞추기", 1, 1, 100.0f, 1.1f, 10f, 1f);
-        
+       addDance("오른쪽으로 비트맞추기", 2, 1, 100.0f, 1.1f, 10f, 1f);
+
     }
-    
+
     /// <summary>
     /// 댄스 정보 입력해서 리스트안에 넣기
     /// </summary>
@@ -100,8 +101,6 @@ public class Dance : MonoBehaviour {
         dance.LvUP = LvUp;
         dance.earn = earn;
         dance.playTime = playTime;
-
-        PlayerData.getInstance().danceNum = num;
 
         danceList.Add(dance);
         

@@ -14,7 +14,8 @@ public class Player : MonoBehaviour {
     }
     public void Update()
     {
-        dance = PlayerData.getInstance().danceNum;
+
+       dance = PlayerData.getInstance().danceNum;
        animator.SetInteger("dancePlay", dance);
 
     }
