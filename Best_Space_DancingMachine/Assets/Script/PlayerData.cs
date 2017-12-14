@@ -15,6 +15,7 @@ public class PlayerData{
 
     public int placeNum;
     public int soundNum;
+    public int danceNum;
 
     public bool fever;
 
@@ -23,6 +24,7 @@ public class PlayerData{
     {
         placeNum = 0;
         soundNum = 0;
+        danceNum = 0;
         money = 0.0f;
         rock_money = 0;
         day = 1;

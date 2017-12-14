@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
     
     public Animator animator;
+    public int dance = 0;
 
     public void Start()
     {
@@ -13,15 +14,8 @@ public class Player : MonoBehaviour {
     }
     public void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            animator.SetInteger("dancePlay", 1);
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            animator.SetInteger("dancePlay", 0);
-        }
+        dance = PlayerData.getInstance().danceNum;
+       animator.SetInteger("dancePlay", dance);
 
     }
 }

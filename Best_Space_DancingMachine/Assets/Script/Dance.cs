@@ -36,16 +36,20 @@ public class Dance : MonoBehaviour {
         printDanceList();
     }
 
+
     public void printDanceList()
     {
         GameObject temp;
+        Vector3 vec = new Vector3(0, 0, 0);
 
         for (int i = 0; i < danceList.Count; i++)
         {
-
+            
             temp = Instantiate(dance_Prefab);
             temp.transform.parent = parent_obj.transform;
             temp.name = "추가";
+            //temp.transform.localPosition = new Vector3(0,0,0);
+            temp.transform.localScale = new Vector3(1, 1, 1);
             temp.GetComponent<DanceItem>().Name.text = danceList[i].name;
             temp.GetComponent<DanceItem>().Price.text = danceList[i].price.ToString();
             temp.GetComponent<DanceItem>().Level.text = "Lv. " + danceList[i].level;
@@ -72,8 +76,7 @@ public class Dance : MonoBehaviour {
     public void addDanceList()
     {
       
-       addDance("손뼉치기", 1, 1, 100.0f, 1.1f, 10f, 1f);
-       addDance("낄낄", 2, 1, 100.0f, 1.1f, 100f, 0.5f);
+       addDance("왼쪽으로 비트맞추기", 1, 1, 100.0f, 1.1f, 10f, 1f);
         
     }
     
@@ -97,6 +100,8 @@ public class Dance : MonoBehaviour {
         dance.LvUP = LvUp;
         dance.earn = earn;
         dance.playTime = playTime;
+
+        PlayerData.getInstance().danceNum = num;
 
         danceList.Add(dance);
         
