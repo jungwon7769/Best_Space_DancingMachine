@@ -40,7 +40,7 @@ public class Dance : MonoBehaviour {
     public void printDanceList()
     {
         GameObject temp;
-        Vector3 vec = new Vector3(0, 0, 0);
+
 
         for (int i = 0; i < danceList.Count; i++)
         {

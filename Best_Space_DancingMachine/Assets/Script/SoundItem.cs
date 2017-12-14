@@ -17,9 +17,9 @@ public class SoundItem : MonoBehaviour {
 
     public int num;
     public SoundEffect effect;
-    public string name;
+   // public string name;
     public float price;
-    public AudioClip audio;
+   // public AudioClip audio;
     
     public void Start()
     {
