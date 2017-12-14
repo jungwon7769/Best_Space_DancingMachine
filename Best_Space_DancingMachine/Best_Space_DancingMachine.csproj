@@ -242,6 +242,7 @@
     <Compile Include="Assets\Script\MainUIManager.cs" />
     <Compile Include="Assets\Script\OptionUIManager.cs" />
     <Compile Include="Assets\Script\Place.cs" />
+    <Compile Include="Assets\Script\PlaceItem.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerData.cs" />
     <Compile Include="Assets\Script\Sound.cs" />

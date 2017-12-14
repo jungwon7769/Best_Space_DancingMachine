@@ -12,6 +12,15 @@ public class Place {
 
     public int placeNum;
 
+    public List<PlaceInfo> placeList;
+
+    public class PlaceInfo
+    {
+        public int num; // 맵 넘버
+        public string name; // 맵 이름
+        public float price; // 맵 가격
+    }
+
     private Place()
     {
         placeNum = 1;
