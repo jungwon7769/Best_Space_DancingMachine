@@ -53,6 +53,7 @@ public class DanceItem : MonoBehaviour {
             earn *= LvUP;
             price *= LvUP;
             playerData.danceNum = num;
+            playerData.isChange = true;
 
         }
 

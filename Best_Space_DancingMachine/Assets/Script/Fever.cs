@@ -24,9 +24,12 @@ public class Fever : MonoBehaviour {
     {
         float maxFever = 100.0f;
         feverbar.maxValue = maxFever;
+        PlayerData.getInstance().isChange = true;
 
         feverbar.value += 2;
         StartCoroutine("btnClicker");
+
+        PlayerData.getInstance().danceNum = 100;
 
         if (feverbar.value == maxFever)
         {

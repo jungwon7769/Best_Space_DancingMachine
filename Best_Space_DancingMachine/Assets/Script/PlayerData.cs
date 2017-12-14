@@ -19,6 +19,8 @@ public class PlayerData{
 
     public bool fever;
 
+    public bool isChange = false;
+
 
     private PlayerData()
     {
