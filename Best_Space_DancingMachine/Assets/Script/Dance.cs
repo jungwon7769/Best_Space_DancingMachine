@@ -4,25 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+public class DanceInfo
+{
+    public int num;         // 댄스 넘버
+    public string name;     // 댄스 이름
+    public float price;     // 댄스 가격
+    public float priceUP;   // 댄스 가격 강화비율
+    public float earn;      // 댄스로 벌수 있는 돈
+    public float earnUP;    // 댄스로 벌수있는돈 증가비율
+    public float playTime;  // 댄스 재생시간
+    
+}
+
 
 public class Dance : MonoBehaviour {
+
     private static Dance instance = null;
 
-    public class DanceInfo
-    {
-        public string name; // 댄스 이름
-        public int level; // 댄스 레벨
-        public int num; // 댄스 번호
-        public float price; // 댄스 가격 
-        public float LvUP; // 댄스 레벨업 비율
-        public float earn; // 댄스로 벌수 있는 돈
-        public float playTime; // 댄스 재생 시간
-    }
-
-    public GameObject dance_Prefab;
-    public GameObject parent_obj;
-    
-    public List<DanceInfo> danceList;
+    public GameObject dance_Prefab;     // 생성될 댄스 프리팹
+    public GameObject parent_obj;       // 생성될 프리팹 부모
+    public List<DanceInfo> danceList;   // 댄스들을 저장할 리스트
 
 
     private Dance()
@@ -31,26 +32,39 @@ public class Dance : MonoBehaviour {
         addDanceList();
     }
 
-    public void Start()
+
+    public static Dance getInstance()
     {
-        printDanceList();
+        if (instance == null)
+        {
+            instance = new Dance();
+        }
+
+        return instance;
     }
 
 
-    public void printDanceList()
-    {
-        GameObject temp;
+    
 
+
+
+
+    public void createPrefab()
+    {
+        GameObject item;
 
         for (int i = 0; i < danceList.Count; i++)
         {
-            
-            temp = Instantiate(dance_Prefab);
-            temp.transform.parent = parent_obj.transform;
-            temp.name = "추가";
-            //temp.transform.localPosition = new Vector3(0,0,0);
-            temp.transform.localScale = new Vector3(1, 1, 1);
-            temp.GetComponent<DanceItem>().Name.text = danceList[i].name;
+            item = Instantiate(dance_Prefab, parent_obj.transform);
+            item.name = "댄스" + item.GetComponent<DanceItem>().num;
+            item.transform.localScale = new Vector3(1, 1, 1);
+            item.GetComponent<DanceItem>().num = danceList[i].num;
+            item.GetComponent<DanceItem>().Name.text = danceList[i].name;
+            item.GetComponent<DanceItem>().price = danceList[i].price;
+
+
+
+
             temp.GetComponent<DanceItem>().Price.text = danceList[i].price.ToString();
             temp.GetComponent<DanceItem>().Level.text = "Lv. " + danceList[i].level;
             temp.GetComponent<DanceItem>().playTime = danceList[i].playTime;
@@ -63,47 +77,30 @@ public class Dance : MonoBehaviour {
     }
     
 
-    public static Dance getInstance()
-    {
-        if(instance == null)
-        {
-            instance = new Dance();
-        }
-
-        return instance;
-    }
 
     public void addDanceList()
     {
-      
-       addDance("왼쪽으로 비트맞추기", 1, 1, 100.0f, 1.1f, 10f, 1f);
-       addDance("오른쪽으로 비트맞추기", 2, 1, 100.0f, 1.1f, 10f, 1f);
+        addDance(1, "왼쪽비트", 100, 1.1f, 10, 1.1f, 1f);
+        addDance(1, "오른쪽비트", 100, 1.1f, 10, 1.1f, 0.5f);
+
 
     }
 
-    /// <summary>
-    /// 댄스 정보 입력해서 리스트안에 넣기
-    /// </summary>
-    /// <param name="name"></param>
-    /// <param name="num"></param>
-    /// <param name="price"></param>
-    /// <param name="LvUp"></param>
-    /// <param name="earn"></param>
-    /// <param name="playTime"></param>
-    public void addDance(string name, int num, int level, float price, float LvUp, float earn, float playTime)
+    //댄스종류 추가
+    public void addDance(int num, string name, float price, float priceUP, float earn, float earnUP, float playTime)
     {
         DanceInfo dance = new DanceInfo();
 
-        dance.name = name;
         dance.num = num;
-        dance.level = level;
+        dance.name = name;
         dance.price = price;
-        dance.LvUP = LvUp;
+        dance.priceUP = priceUP;
         dance.earn = earn;
+        dance.earnUP = earnUP;
         dance.playTime = playTime;
 
-        danceList.Add(dance);
-        
+        danceList.Add(dance); // 리스트에 추가
+
     }
 
 
