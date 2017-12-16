@@ -53,7 +53,7 @@ public class DanceItem : MonoBehaviour {
         if (playerData.money > price) // 가진돈 가격보단 많아야 살수있음.
         {
             playerData.money -= price;
-            //playerData.danceLv[0] = danceLv;
+            playerData.danceLv[num - 1] = danceLv;
             danceLv++;
             earn *= earnUP;
             price *= priceUP;
