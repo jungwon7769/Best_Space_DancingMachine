@@ -17,6 +17,7 @@ public class PlayerData{
     public int soundNum;
     public int danceNum;
 
+    public int[] danceLv;
     public bool fever;
 
     public bool isChange = false;
@@ -32,6 +33,8 @@ public class PlayerData{
         day = 1;
         place = "동네놀이터";
         fever = false;
+
+        danceLv = new int[2];
         //초기화
     }
 
