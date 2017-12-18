@@ -28,6 +28,8 @@ public class Player : MonoBehaviour {
             animator.SetInteger("dancePlay", dance);
         }
 
+        Dance.getInstance();
+
     }
 
 
