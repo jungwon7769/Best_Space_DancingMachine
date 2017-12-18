@@ -3,34 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum SoundEffect
-{
-  money = 0,
-  rock = 1,
-  feverOccurDown =2, // 발생시간 빨라짐
-  feverTimeUp = 3, // 피버시간 길어짐
-    
-};
-public class Sound : MonoBehaviour {
-    private static Sound instance = null;
 
+public class SoundInfo
+{
+    public int num;
+    public string name;
+    public string effect;
+    public int price;
+    public float benefit;
+
+}
+
+public class Sound : MonoBehaviour {
+
+    private static Sound instance = null;
 
     public GameObject sound_Prefab;
     public GameObject parent_obj;
 
     public List<SoundInfo> soundList;
-    public AudioClip audioclip;
 
     private Sound()
     {
         soundList = new List<SoundInfo>();
-        addSoundList();
+        addList();
     }
 
-    public void Start()
-    {
-        printSoundList();
-    }
     public static Sound getInstance()
     {
         if (instance == null)
@@ -39,60 +37,68 @@ public class Sound : MonoBehaviour {
         return instance;
     }
 
-    public class SoundInfo
+    public void Start()
     {
-        public int num; // 사운드 번호
-        public SoundEffect effect; // 사운드 효과
-        public string name;// 사운드 이름
-        public float price; // 사운드 가격
-        public AudioClip audio; // 사운드
+        create_Item(sound_Prefab, soundList);
+
     }
 
-    public void printSoundList()
+    public void create_Item(GameObject prefab, List<SoundInfo> list)
     {
-        GameObject temp;
+        GameObject item;
 
-        for (int i = 0; i < soundList.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            
-            temp = Instantiate(sound_Prefab);
-            temp.transform.parent = parent_obj.transform;
-            temp.name = "음악추가";
-            temp.transform.localScale = new Vector3(1, 1, 1);
-            temp.GetComponent<SoundItem>().Name.text = soundList[i].name;
-            temp.GetComponent<SoundItem>().effect = (SoundEffect)soundList[i].effect;
+            item = Instantiate(prefab, parent_obj.transform); // 생성
+            item.transform.localScale = new Vector3(1, 1, 1); // 스케일 설정
+            item.GetComponent<SoundItem>().num = list[i].num;
+            item.GetComponent<SoundItem>().name = list[i].name;
+            item.GetComponent<SoundItem>().effect = list[i].effect;
+            item.GetComponent<SoundItem>().price = list[i].price;
+            item.GetComponent<SoundItem>().benefit = list[i].benefit;
 
+            item.GetComponent<SoundItem>().Name.text = list[i].name;
+            item.GetComponent<SoundItem>().Effect.text = list[i].effect;
+            item.GetComponent<SoundItem>().Price.text = money_view_change(list[i].price);
         }
+
     }
 
-
-
-    public void addSoundList()
+    public string money_view_change(int money)
     {
-        addSound(1, (SoundEffect)1, "흥얼", 100f, audioclip);
-       
+
+        if (money >= 10000)
+        {
+            if (money >= 100000000)
+                return (money / 10000000) + "b";
+
+            else
+                return (money / 10000) + "a";
+        }
+        else
+            return money.ToString();
     }
 
-
-    /// <summary>
-    /// 사운드 목록 추가 
-    /// </summary>
-    /// <param name="num"></param>
-    /// <param name="effect"></param>
-    /// <param name="name"></param>
-    /// <param name="price"></param>
-    /// <param name="audio"></param>
-    public void addSound(int num, SoundEffect effect, string name, float price, AudioClip audio)
+    public void addList()
     {
-        SoundInfo sound = new SoundInfo();
+        addSound(1, "클럽비트", "돈 획득량 1.5배 증가", 50000, 1.5f);
+        addSound(2, "이런저런", "돈 획득량 2배 증가", 1000000, 2.0f);
+        addSound(3, "노래3", "돈 획득량 3배 증가", 10000000, 3.0f);
+        addSound(4, "노래4", "돈 획득량 5배 증가", 100000000, 5.0f);
+        addSound(5, "개발자의 노래", "돈 획득량 10배 증가", 1000000000, 10.0f);
+    }
 
-        sound.num = num;
-        sound.effect = effect;
-        sound.name = name;
-        sound.price = price;
-        sound.audio = audio;
+    public void addSound(int num, string name, string effect, int price, float benefit)
+    {
+        SoundInfo Sound_ = new SoundInfo();
 
-        soundList.Add(sound);
+        Sound_.num = num;
+        Sound_.name = name;
+        Sound_.effect = effect;
+        Sound_.price = price;
+        Sound_.benefit = benefit;
+
+        soundList.Add(Sound_);
 
     }
 
