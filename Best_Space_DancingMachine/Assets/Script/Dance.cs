@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class DanceInfo
 {
-    public int num;         // 댄스 넘버
-    public string name;     // 댄스 이름
-    public int level;       // 댄스 레벨
-    public float price;     // 댄스 가격
-    public float priceUP;   // 댄스 가격 강화비율
-    public float earn;      // 댄스로 벌수 있는 돈
-    public float earnUP;    // 댄스로 벌수있는돈 증가비율
-    public float playTime;  // 댄스 재생시간
+    public int num;
+    public string name;
+    public string effect;
+    public int price;
+    public float priceUP;
+    public int earn;
+    public float earnUP;
+    public float playTime;
     
 }
 
@@ -30,75 +30,84 @@ public class Dance : MonoBehaviour {
     private Dance()
     {
         danceList = new List<DanceInfo>();
-        addDanceList();
+        addList();
     }
 
 
     public static Dance getInstance()
     {
         if (instance == null)
-        {
             instance = new Dance();
-        }
 
         return instance;
     }
 
     public void Start()
     {
-        createPrefab();
+        create_Item(dance_Prefab, danceList);
+
     }
 
-    public void createPrefab()
+    public void create_Item(GameObject prefab, List<DanceInfo> list)
     {
         GameObject item;
 
-        for (int i = 0; i < danceList.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            item = Instantiate(dance_Prefab, parent_obj.transform);
-            item.name = "댄스" + item.GetComponent<DanceItem>().num;
-            item.transform.localScale = new Vector3(1, 1, 1);
-            item.GetComponent<DanceItem>().num = danceList[i].num;
-            item.GetComponent<DanceItem>().NAME.text = danceList[i].name;
-            item.GetComponent<DanceItem>().LV.text = "Lv. " + danceList[i].level;
-            item.GetComponent<DanceItem>().price = danceList[i].price;
-            item.GetComponent<DanceItem>().PRICE.text = danceList[i].price.ToString();
-            item.GetComponent<DanceItem>().danceLv = danceList[i].level;
-            item.GetComponent<DanceItem>().playTime = danceList[i].playTime;
-            item.GetComponent<DanceItem>().earn = danceList[i].earn;
-            item.GetComponent<DanceItem>().earnUP = danceList[i].earnUP;
-            item.GetComponent<DanceItem>().priceUP = danceList[i].priceUP;
+            item = Instantiate(prefab, parent_obj.transform); // 생성
+            item.transform.localScale = new Vector3(1, 1, 1); // 스케일 설정
+            item.GetComponent<DanceItem>().num = list[i].num;
+            item.GetComponent<DanceItem>().name = list[i].name;
+            item.GetComponent<DanceItem>().effect = list[i].effect;
+            item.GetComponent<DanceItem>().price = list[i].price;
+            item.GetComponent<DanceItem>().priceUP = list[i].priceUP;
+            item.GetComponent<DanceItem>().earn = list[i].earn;
+            item.GetComponent<DanceItem>().earnUP = list[i].earnUP;
+            item.GetComponent<DanceItem>().playTime = list[i].playTime;
 
+            item.GetComponent<DanceItem>().Name.text = list[i].name;
+            item.GetComponent<DanceItem>().Effect.text = list[i].effect;
+            item.GetComponent<DanceItem>().Price.text = money_view_change(list[i].price);
         }
+
     }
+
+
+    public string money_view_change(int money)
+    {
+
+        if (money >= 10000)
+        {
+            if (money >= 100000000)
+                return (money / 10000000) + "b";
+
+            else
+                return (money / 10000) + "a";
+        }
+        else
+            return money.ToString();
+    }
+
+    public void addList()
+    {
+        addDance(1, "왼쪽으로 비트", money_view_change(10), 100, 1.1f, 10, 1.1f, 0.5f);
     
-
-
-    public void addDanceList()
-    {
-       int[] danceLv = new int[2];
-       danceLv = PlayerData.getInstance().danceLv;
-
-       addDance(1, "왼쪽비트", danceLv[0], 100, 1.1f, 10, 1.1f, 1f);
-       addDance(2, "오른쪽비트", danceLv[1],100, 1.1f, 10, 1.1f, 0.5f);
     }
- 
 
-    //댄스종류 추가
-    public void addDance(int num, string name,int level, float price, float priceUP, float earn, float earnUP, float playTime)
+    public void addDance(int num, string name, string effect, int price, float priceUP, int earn, float earnUP, float playTime)
     {
-        DanceInfo dance = new DanceInfo();
+        DanceInfo Dance_ = new DanceInfo();
 
-        dance.num = num;
-        dance.name = name;
-        dance.level = level;
-        dance.price = price;
-        dance.priceUP = priceUP;
-        dance.earn = earn;
-        dance.earnUP = earnUP;
-        dance.playTime = playTime;
+        Dance_.num = num;
+        Dance_.name = name;
+        Dance_.effect = effect;
+        Dance_.price = price;
+        Dance_.priceUP = priceUP;
+        Dance_.earn = earn;
+        Dance_.earnUP = earnUP;
+        Dance_.playTime = playTime;
 
-        danceList.Add(dance); // 리스트에 추가
+        danceList.Add(Dance_);
 
     }
 
