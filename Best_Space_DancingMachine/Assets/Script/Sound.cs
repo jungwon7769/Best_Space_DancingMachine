@@ -23,11 +23,33 @@ public class Sound : MonoBehaviour {
 
     public List<SoundInfo> soundList;
 
+    public AudioSource sound_Source;
+    public AudioClip audioClip;
+    public float sound_volume;
+
+    public AudioClip[] sound_Clip_list;
+
+    public bool isMute = false;
+    public bool isPlay = false;
+
     private Sound()
     {
         soundList = new List<SoundInfo>();
+        
         addList();
     }
+
+    
+    void Awake()
+    {
+        if (Sound.instance == null)
+            Sound.instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
+
 
     public static Sound getInstance()
     {
@@ -39,7 +61,37 @@ public class Sound : MonoBehaviour {
 
     public void Start()
     {
+
+        sound_Source = gameObject.AddComponent<AudioSource>();
+
+        object[] temp;
+        temp = Resources.LoadAll("Audio");
+        sound_Clip_list = new AudioClip[temp.Length]; //리소스갯수로변경함
+
+        for (int i = 0; i < temp.Length; i++)
+        {
+            sound_Clip_list[i] = temp[i] as AudioClip;
+        }
+
+
+        sound_Source.PlayOneShot(audioClip);
+
         create_Item(sound_Prefab, soundList);
+
+    }
+
+    public void playMusic(int num)
+    {
+        if (!isMute)
+        {
+            audioClip = sound_Clip_list[num-1];
+            Debug.Log(sound_Clip_list[num-1]);
+            sound_Source.clip = audioClip;
+
+            sound_Source.Play();
+            sound_Source.loop = true;
+            sound_Source.volume = 1.0f;
+        }
 
     }
 

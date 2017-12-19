@@ -13,17 +13,17 @@ public class MainUIManager : MonoBehaviour {
 
     public Text btntext_Dance;
     public Text btntext_Sound;
-    public Text btntext_Coordi;
+    public Text btntext_Heart;
     public Text btntext_Place;
     
     public Button dance;
     public Button sound;
-    public Button coordi;
+    public Button heart;
     public Button place;
 
     public GameObject dancePanel;
     public GameObject soundPanel;
-    public GameObject coordiPanel;
+    public GameObject heartPanel;
     public GameObject placePanel;
     
 
@@ -34,7 +34,7 @@ public class MainUIManager : MonoBehaviour {
     void Start () {
         dancePanel.SetActive(true); // dance default
         soundPanel.SetActive(false);
-        coordiPanel.SetActive(false);
+        heartPanel.SetActive(false);
         placePanel.SetActive(false);
         clickmoney.enabled = false;
         
@@ -66,27 +66,30 @@ public class MainUIManager : MonoBehaviour {
   
     public void onClick_Dance()
     {
-        panelActive(dancePanel, soundPanel, coordiPanel, placePanel);
-        colorChange(btntext_Dance, btntext_Sound, btntext_Place, btntext_Coordi);
+        soundPanel.SetActive(false);
+        heartPanel.SetActive(false);
+        placePanel.SetActive(false);
+
+        colorChange(btntext_Dance, btntext_Sound, btntext_Place, btntext_Heart);
     }
 
     public void onClick_Sound()
     {
-        panelActive(soundPanel, dancePanel, coordiPanel, placePanel);
-        colorChange(btntext_Sound, btntext_Dance, btntext_Place, btntext_Coordi);
+        panelActive(soundPanel, heartPanel, placePanel);
+        colorChange(btntext_Sound, btntext_Dance, btntext_Place, btntext_Heart);
 
     }
 
-    public void onClick_Coordi()
+    public void onClick_Heart()
     {
-        panelActive(coordiPanel, dancePanel, soundPanel, placePanel);
-        colorChange(btntext_Coordi, btntext_Sound, btntext_Dance, btntext_Place);
+        panelActive(heartPanel, soundPanel, placePanel);
+        colorChange(btntext_Heart, btntext_Sound, btntext_Dance, btntext_Place);
     }
 
     public void onClick_Place()
     {
-        panelActive(placePanel, dancePanel, soundPanel, coordiPanel);
-        colorChange(btntext_Place, btntext_Coordi, btntext_Sound, btntext_Dance);
+        panelActive(placePanel,soundPanel, heartPanel);
+        colorChange(btntext_Place, btntext_Heart, btntext_Sound, btntext_Dance);
     }
 
     /// <summary>
@@ -95,13 +98,11 @@ public class MainUIManager : MonoBehaviour {
     /// <param name="active"></param>
     /// <param name="panel1"></param>
     /// <param name="panel2"></param>
-    /// <param name="panel3"></param>
-    public void panelActive(GameObject active, GameObject panel1, GameObject panel2, GameObject panel3)
+    public void panelActive(GameObject active, GameObject panel1, GameObject panel2 )
     {
         active.SetActive(true);
         panel1.SetActive(false);
         panel2.SetActive(false);
-        panel3.SetActive(false);
     }
 
     /// <summary>
@@ -122,7 +123,7 @@ public class MainUIManager : MonoBehaviour {
 
     public void allBtn_TextBlack()
     {
-        btntext_Coordi.color = Color.black;
+        btntext_Heart.color = Color.black;
         btntext_Dance.color = Color.black;
         btntext_Place.color = Color.black;
         btntext_Sound.color = Color.black;

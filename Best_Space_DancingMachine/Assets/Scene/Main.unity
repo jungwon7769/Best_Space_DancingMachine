@@ -636,15 +636,15 @@ MonoBehaviour:
   clickmoney: {fileID: 1963419926}
   btntext_Dance: {fileID: 1828964161}
   btntext_Sound: {fileID: 1109564746}
-  btntext_Coordi: {fileID: 703925010}
+  btntext_Heart: {fileID: 703925010}
   btntext_Place: {fileID: 1838206110}
   dance: {fileID: 1273593373}
   sound: {fileID: 1815084067}
-  coordi: {fileID: 2047580414}
+  heart: {fileID: 2047580414}
   place: {fileID: 881217368}
   dancePanel: {fileID: 1629085721}
   soundPanel: {fileID: 566275772}
-  coordiPanel: {fileID: 1386212377}
+  heartPanel: {fileID: 1386212377}
   placePanel: {fileID: 666769336}
 --- !u!114 &241432133
 MonoBehaviour:
@@ -1294,7 +1294,6 @@ GameObject:
   - component: {fileID: 566275773}
   - component: {fileID: 566275775}
   - component: {fileID: 566275774}
-  - component: {fileID: 566275776}
   m_Layer: 5
   m_Name: Panel_Sound
   m_TagString: Untagged
@@ -1354,20 +1353,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 566275772}
---- !u!114 &566275776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 566275772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66cd363e9376d148a798b3cf1f1b1ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound_Prefab: {fileID: 1041895302025356, guid: 9fa70c58b8fabc840afb1f429f25121a,
-    type: 2}
-  parent_obj: {fileID: 84805282}
 --- !u!1 &582281522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1826,60 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &816465594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 816465597}
+  - component: {fileID: 816465596}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &816465596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816465594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66cd363e9376d148a798b3cf1f1b1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_Prefab: {fileID: 1771665407839702, guid: 119d008ce11a2b54590070dd15f65816,
+    type: 2}
+  parent_obj: {fileID: 84805282}
+  sound_Source: {fileID: 0}
+  audioClip: {fileID: 0}
+  sound_volume: 0
+  sound_Clip_list:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isMute: 0
+  isPlay: 0
+--- !u!4 &816465597
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816465594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8125, y: -0.7812493, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824094310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,27 +5436,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4919273810438026, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.7994992
+      value: 0.9655166
       objectReference: {fileID: 0}
     - target: {fileID: 4919273810438026, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.6006672
+      value: 0.26034153
       objectReference: {fileID: 0}
     - target: {fileID: 4919273810438026, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 466.165
+      value: 509.819
       objectReference: {fileID: 0}
     - target: {fileID: 4141080607296264, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.8084467
+      value: -0.085813336
       objectReference: {fileID: 0}
     - target: {fileID: 4141080607296264, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.58856946
+      value: 0.99631125
       objectReference: {fileID: 0}
     - target: {fileID: 4141080607296264, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 252.111
+      value: 350.154
       objectReference: {fileID: 0}
     - target: {fileID: 4007928434815810, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.z
@@ -5493,15 +5532,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4921401133834862, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.59391606
+      value: 0.16858856
       objectReference: {fileID: 0}
     - target: {fileID: 4921401133834862, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.80452704
+      value: 0.98568654
       objectReference: {fileID: 0}
     - target: {fileID: 4921401133834862, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 647.129
+      value: 739.412
       objectReference: {fileID: 0}
     - target: {fileID: 4168514549727512, guid: 804665ab318fb68489cbda3ec33772a9, type: 2}
       propertyPath: m_LocalRotation.z
@@ -5789,7 +5828,7 @@ GameObject:
   - component: {fileID: 2047580415}
   - component: {fileID: 2047580414}
   m_Layer: 5
-  m_Name: Btn_Popularity
+  m_Name: Btn_Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5854,7 +5893,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 241432132}
-        m_MethodName: onClick_Coordi
+        m_MethodName: onClick_Heart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

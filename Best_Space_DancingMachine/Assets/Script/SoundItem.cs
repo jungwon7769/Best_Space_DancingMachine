@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundItem : MonoBehaviour {
+public class SoundItem : MonoBehaviour
+{
 
     /*UI*/
     public Image Sound_Img;
@@ -24,10 +25,10 @@ public class SoundItem : MonoBehaviour {
     {
         imgChange();
     }
-    
+
     public void imgChange()
     {
-        switch(num)
+        switch (num)
         {
             case 1: case 2: Sound_Img.sprite = sound1; break;
             case 3: case 4: Sound_Img.sprite = sound2; break;
@@ -36,5 +37,10 @@ public class SoundItem : MonoBehaviour {
         }
     }
 
-  
+    public void btn_buy()
+    {
+        PlayerData.getInstance().soundNum = num;
+        Sound.getInstance().playMusic(num);
+    }
+
 }
