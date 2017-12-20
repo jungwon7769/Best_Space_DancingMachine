@@ -34,6 +34,12 @@ public class DanceItem : MonoBehaviour {
         setProgressbar();
     }
 
+    public void btn_buy()
+    {
+        PlayerData.getInstance().danceNum = num;
+        PlayerData.getInstance().isChange = true;
+    }
+
     public void setProgressbar()
     {
         Progressbar.maxValue = 100.0f;

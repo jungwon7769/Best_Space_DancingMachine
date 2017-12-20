@@ -91,7 +91,7 @@ public class Dance : MonoBehaviour {
     public void addList()
     {
         addDance(1, "왼쪽으로 비트", money_view_change(10), 100, 1.1f, 10, 1.1f, 0.5f);
-    
+        addDance(2, "소원을말해봐 춤", money_view_change(10000), 100, 1.1f, 10, 1.1f, 1f);
     }
 
     public void addDance(int num, string name, string effect, int price, float priceUP, int earn, float earnUP, float playTime)
