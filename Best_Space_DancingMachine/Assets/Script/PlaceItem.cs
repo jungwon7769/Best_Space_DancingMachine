@@ -40,7 +40,7 @@ public class PlaceItem : MonoBehaviour {
         PlayerData.getInstance().placeNum = num;
         /*
         PlayerData data = PlayerData.getInstance();
-
+        
         if (data.money > price)
         {
             data.money -= price;

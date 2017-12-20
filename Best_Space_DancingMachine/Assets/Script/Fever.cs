@@ -7,13 +7,13 @@ public class Fever : MonoBehaviour {
 
     public Slider feverbar;
     public Button btn_fever;
-    public Text clickText;
+    public Text percent_txt;
     public float maxFever = 100.0f;
 
 
     public void Start()
     {
-        clickText = GetComponent<MainUIManager>().clickmoney;
+        
     }
     public void Update()
     {
@@ -27,7 +27,7 @@ public class Fever : MonoBehaviour {
         PlayerData.getInstance().isChange = true;
 
         feverbar.value += 2;
-        StartCoroutine("btnClicker");
+        percent_txt.text = feverbar.value + "%";
 
         PlayerData.getInstance().danceNum = 100;
 
@@ -39,13 +39,7 @@ public class Fever : MonoBehaviour {
 
     }
 
-    IEnumerator btnClicker()
-    {
-        clickText.enabled = true;
-        yield return new WaitForSeconds(0.1f);
-        clickText.enabled = false;
-    }
-
+   
 
     public void feverMode() // 피버모드 발동
     {

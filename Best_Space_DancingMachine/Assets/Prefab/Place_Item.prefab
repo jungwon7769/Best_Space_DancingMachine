@@ -225,7 +225,7 @@ MonoBehaviour:
   Effect: {fileID: 114934970991898702}
   Price: {fileID: 114644022127134402}
   Btn_buy: {fileID: 114809339530097292}
-  map1: {fileID: 21300000, guid: e77ee4ca5dde1754686052cf1d0a88bb, type: 3}
+  map1: {fileID: 21300000, guid: ef02d4310b09f6d4689c89357df75326, type: 3}
   map2: {fileID: 21300000, guid: c41a5137da89af5428a17a91a1dbd43a, type: 3}
   num: 0
   name: 

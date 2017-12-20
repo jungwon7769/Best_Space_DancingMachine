@@ -22,7 +22,7 @@ public class Place : MonoBehaviour {
     public List<PlaceInfo> placeList;
 
     public Image map;
-    public Sprite map1, map2;
+    public Sprite map1, map2,map3;
 
 
     private Place()
@@ -78,6 +78,7 @@ public class Place : MonoBehaviour {
         {
             case 1: map.sprite = map1; break;
             case 2: map.sprite = map2; break;
+            case 3: map.sprite = map3; break;
         }
 
     }
@@ -85,8 +86,7 @@ public class Place : MonoBehaviour {
     public void addList()
     {
         addPlace(1, "동네놀이터", "효과없음", 0, 1.0f);
-        addPlace(2, "초딩과 댄스배틀", "승리시 인기도 100증가", 10, 1.2f);
-        addPlace(3, "홍대 걷고싶은거리", "피버 돌멩이양 1.5배 증가", 300, 1.5f);
+        addPlace(2, "홍대 걷고싶은거리", "피버 돌멩이양 1.5배 증가", 300, 1.5f);
 
     }
 
